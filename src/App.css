@@ -1,0 +1,19 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+h1{text-align: center; margin: 0 auto; height: 100vh; line-height: 100vh;}
+h2{margin: 0 auto; max-width: 230px; font-size: 1.4rem;}
+li{list-style: none;}
+#container{}
+#container .movies{display: grid; grid-template-columns: repeat(3,1fr); grid-template-rows: auto; padding: 4%;}
+#container .movies>div{text-align: center; margin-bottom: 5%; cursor: default;}
+#container .movies>div picture{}
+#container .movies>div h2{}
+#container .movies>div ul{display: flex; justify-content:center;}
+#container .movies>div ul li{}
+#container .movies>div ul li:not(:last-child):after{content: ","; }
+#container .movies>div details{}
+#container .movies>div details summary{}
+#container .movies>div details p{font-size: 1rem; text-overflow: ellipsis; white-space: pre-wrap; max-width: 350px; margin: 0 auto;}
+@media all and (max-width: 760px) {
+  h2{font-size: .8rem; width: 88px; height: 30px; line-height: 30px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+  li{}
+}

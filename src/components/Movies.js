@@ -1,3 +1,6 @@
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
 function Movies({ smallCoverIimage, mediumCoverIimage, title, genres, summary }) {
     return (
         <div>
@@ -5,7 +8,9 @@ function Movies({ smallCoverIimage, mediumCoverIimage, title, genres, summary })
                 <source srcSet={mediumCoverIimage} media="(min-width: 760px)"></source>
                 <img src={smallCoverIimage} alt={title} />
             </picture>
-            <h2>{title}</h2>
+            <Link to={<Movies />}>
+                <h2>{title}</h2>
+            </Link>
             <ul>{genres.map((genre) =>
                 <li key={genre}>{genre}</li>
             )}</ul>
@@ -16,4 +21,12 @@ function Movies({ smallCoverIimage, mediumCoverIimage, title, genres, summary })
         </div>
     )
 }
+
+Movies.propTypes = {
+    smallCoverIimage: PropTypes.string.isRequired,
+    mediumCoverIimage: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+    summary: PropTypes.string.isRequired
+};
 export default Movies;
